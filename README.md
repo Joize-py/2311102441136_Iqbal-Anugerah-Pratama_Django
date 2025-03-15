@@ -6,3 +6,13 @@ di sini saya akan membuat website recreate website landing page dari game overwa
 
 ## cara menjalankannya
 `python manage.py runserver`
+
+## lalu buka development server
+at "http://127.0.0.1:8000/"
+
+## jangan lupa menambah kan admin
+at "http://127.0.0.1:8000/admin/"
+
+## lalu pilih salah satu antara character/user
+- character - jika kamu ingin menambahkan character kamu harus          memasukkan nama, role, dificulty, dan description.
+- user -jika kamu ingin menambahkan user kamu perlu memasukkan user, lalu alamat dan no telpon
