@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-
+# Create your models here.
 class Character(models.Model):
     ROLE_CHOICES = [
         ('Tank', 'Tank'),
@@ -20,4 +20,4 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
-# Create your models here.
+
