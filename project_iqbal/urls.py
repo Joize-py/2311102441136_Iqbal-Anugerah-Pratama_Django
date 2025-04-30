@@ -22,10 +22,20 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 
-from . views import home
+from . views import home,char,contacts,base,blog,detail,karakter,karakteradd, karakterupdate, karakterdelete
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name= 'home'),
+    path('char.html', char, name= 'char'),
+    path('contacts.html', contacts, name= 'contacts'),
+    path('base.html', base, name='base'),
+    path('blog.html', blog, name='blog'),
+    path('detail.html', detail, name='detail'),
+    path('karakter.html', karakter, name="karakter"),
+    path('karakteradd.html', karakteradd, name="karakteradd"),
+    path('karakterupdate.html/<int:id>/', karakterupdate, name="karakterupdate"),
+    path('karakterdelete/<int:id>/', karakterdelete, name="karakterdelete"),
+   
 ]
 
 #-------------------MEDIA-------------------

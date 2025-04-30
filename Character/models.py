@@ -1,16 +1,16 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 # Create your models here.
-class Character(models.Model):
+class Karakter(models.Model):
     ROLE_CHOICES = [
         ('Tank', 'Tank'),
         ('Damage', 'Damage'),
         ('Support', 'Support'),
     ]
 
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=50)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
-    difficulty = models.IntegerField()
+    difficulty = models.IntegerField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -20,4 +20,5 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+        
 

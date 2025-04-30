@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Character
+from .models import Karakter
 # Register your models here.
-@admin.register(Character)
+@admin.register(Karakter)
 class CharacterAdmin(admin.ModelAdmin):
      search_fields = ['name']
 
