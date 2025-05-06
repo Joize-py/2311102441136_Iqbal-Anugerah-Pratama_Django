@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Open9 | NFT Marketplace HTML Template</title>
+
+    <meta name="author" content="themesflat.com">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'halaman/css/style.css' %}">
+
+    <!-- Reponsive -->
+    <link rel="stylesheet" type="text/css" href="{% static 'halaman/css/responsive.css' %}">
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="{% static 'halaman/icon/Favicon.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'halaman/icon/Favicon.png' %}">
+
+</head>
+
+<body class="body dashboard">
+
+    <!-- preload -->
+    <div class="preload preload-container">
+        <div class="middle">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+          </div>
+    </div>
+    <!-- /preload -->
+
+    
+        
+    <div id="wrapper">
+        <div id="page" class="home-6 flex">
+            
+            <div class="section-menu-left">
+                <div class="box-logo">
+                    <a href="index.html"><img src="{% static 'halaman/images/logo/logo.png' %}" alt=""></a>
+                </div>
+                <div class="connect">
+                    <a href="market-wallet.html" id="connectbtn" class="tf-button style-1 type-1 text-center">
+                        <span>Wallet connect</span>
+                        <i class="icon-wa"></i>
+                    </a>
+                </div>
+                <div class="list-menu over-content">
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{% url 'home' %}"><i class="icon-home-alt"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'karakteradmin' %}"><i class="icon-gem-1"></i> Tier List</a>
+                        </li>
+                        <li class="has-item">
+                            <a class="button-sub-item"><i class="icon-pages"></i> Editor Pages</a>
+                            <ul class="sub-item">
+                                <li><a href="{% url 'charadmin' %}">Hero</a></li>
+                                <li><a href="#">Map</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-menu wrap-bottom">
+                    <ul class="menu-bottom">
+                        <li class="has-item language relative">
+                            <a class="button-sub-item"><img src="{% static 'halaman/images/english.png' %}" alt=""> <span>English</span></a>
+                            <ul class="sub-item">
+                                <li><img src="{% static 'halaman/images/english.png' %}" alt=""> <span>English</span></li>
+                                <li><img src="{% static 'halaman/images/english.png' %}" alt=""> <span>japan</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-sign-out-1"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wrap-content">
+
+                {% block content %}
+
+                {% endblock %}
+
+
+                <footer id="footer">
+                    <div class="container-fluid">
+                        <div class="footer-bottom style-1 items-center">
+                            <p>© 2023 OpeN9 - Made By Themesflat</p>
+                            <div class="widget-social">
+                                <ul class="flex">
+                                    <li><a href="#" class="icon-facebook"></a></li>
+                                    <li><a href="#" class="icon-twitter"></a></li>
+                                    <li><a href="#" class="icon-vt"></a></li>
+                                    <li><a href="#" class="icon-tiktok"></a></li>
+                                    <li><a href="#" class="icon-youtube"></a></li>
+                                </ul>
+                            </div>
+                            <ul class="flex">
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms of Service</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            
+            <div class="btn-canvas active">
+                <div class="canvas">
+                    <span></span>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <div class="tf-mouse tf-mouse-outer"></div>
+    <div class="tf-mouse tf-mouse-inner"></div>
+
+    <div class="progress-wrap active-progress">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;"></path>
+        </svg>
+    </div>
+
+    <!-- Javascript -->
+    <script src="{% static 'halaman/js/jquery.min.js' %}"></script>
+    <script src="{% static 'halaman/js/popper.min.js' %}"></script>
+    <script src="{% static 'halaman/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'halaman/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'halaman/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'halaman/js/swiper.js' %}"></script>
+    <script src="{% static 'halaman/js/count-down.js' %}"></script>
+    
+    <script src="{% static 'halaman/js/simpleParallax.min.js' %}"></script>
+    <script src="{% static 'halaman/js/gsap.js' %}"></script>
+    <script src="{% static 'halaman/js/SplitText.js' %}"></script>
+    <script src="{% static 'halaman/js/wow.min.js' %}"></script>
+    <script src="{% static 'halaman/js/ScrollTrigger.js' %}"></script>
+    <script src="{% static 'halaman/js/gsap-animation.js' %}"></script>
+    <script src="{% static 'halaman/js/tsparticles.min.js' %}"></script>
+    <script src="{% static 'halaman/js/tsparticles.js' %}"></script>
+    <script src="{% static 'halaman/js/main.js' %}"></script>
+
+</body>
+
+</html>
+

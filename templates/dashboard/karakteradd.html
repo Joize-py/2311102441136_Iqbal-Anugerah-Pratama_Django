@@ -1,0 +1,77 @@
+{%  extends 'dashboard/baseadmin.html' %}
+{% load static %}
+{% block content %}
+<div class="flat-title-page">
+    <div class="themesflat-container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="heading text-center">Tier List</h1>
+                <ul class="breadcrumbs flex justify-center">
+                    <li class="icon-keyboard_arrow_right">
+                        <a href="../halaman/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Explore</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tf-section-2 discover-item loadmore-12-item">
+    <div class="themesflat-container">
+        
+        <div class="product-item item-activity mb-0">
+            <h6><div class="column flex items-center">isi dulu</div></h6>
+            <i class="icon-keyboard_arrow_down"></i>
+           
+            <div class="content">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="table-heading">
+                        <div class="column">Name</div>
+                        <div class="column">Role</div>
+                        <div class="column">Difficulty</div>
+                        <div class="column">Description</div>
+                      
+                        
+                    </div>
+                    <div class="table-item">
+                        <div class="column flex items-center"><input type="text" name="name" class="TextField" maxlength="50" required id="id_name" ></text></div>
+                        <div class="column flex items-center">
+                            <select name="role" id="id_role">
+                                <option value selected>pilih role</option>
+                                <option value="Tank">Tank</option>
+                                <option value="Damage">Damage</option>
+                                <option value="Support">Support</option>
+                            </select>
+                        </div>
+                        <div class="column flex items-center"><span class="tf-color"><input type="number" name="difficulty" class="IntegerField" required id="id_difficulty" ></label></div>
+                        <div class="column flex items-center">
+                            <select name="tier" id="id_tier">
+                                <option value selected>pilih role</option>
+                                <option value="S">S</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+                        <div class="widget-pagination">
+                            <div class="" id="wallet-header">
+                                <a href="../halaman/karakter.html" id="connectbtn" class="widget-pagination">
+                                    <button>
+                                    <span>Tambah</span>
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

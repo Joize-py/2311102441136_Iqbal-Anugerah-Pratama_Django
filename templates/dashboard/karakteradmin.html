@@ -1,4 +1,4 @@
-{%  extends 'halaman/base.html' %}
+{%  extends 'dashboard/baseadmin.html' %}
 {% load static %}
 {% block content %}
     <div class="flat-title-page">
@@ -26,7 +26,11 @@
                 <h6>
                     <div class="column flex items-center">
                         <div class="widget-pagination">
-                          Character
+                            <ul class="justify-center">
+                                <li>
+                                    <a href="{% url 'karakteradd' %}">+</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </h6>
@@ -37,7 +41,7 @@
                         <div class="column">Role</div>
                         <div class="column">Difficulty</div>
                         <div class="column">Description</div>
-
+                        <div class="column">Action</div>
 
                     </div>
                     {% for karakter in karakter %}
@@ -49,7 +53,20 @@
                                     class="tf-color">{{ karakter.difficulty|default:"-" }}</span></div>
                             <div class="column flex items-center"><span
                                     class="tf-color">{{ karakter.tier|default:"-" }}</span></div>
-
+                            <div class="column flex items-center" id="wallet-header">
+                                <a href="{% url 'karakterdelete' karakter.id %}" id="connectbtn"
+                                   class="widget-pagination mr-2">
+                                    <button>
+                                        <span>Hapus</span>
+                                    </button>
+                                </a>
+                                <a href="{% url 'karakterupdate' karakter.id %}" id="connectbtn"
+                                   class="widget-pagination">
+                                    <button>
+                                        <span>Update</span>
+                                    </button>
+                                </a>
+                            </div>
 
                         </div>
                         {% empty %}

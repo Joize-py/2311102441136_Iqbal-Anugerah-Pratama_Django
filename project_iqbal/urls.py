@@ -15,31 +15,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 #-------------------MEDIA-------------------
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 
-from . views import home,char,contacts,base,blog,detail,karakter,karakteradd, karakterupdate, karakterdelete
+from . views import home,char,contacts,base,blog,detail,karakter, map
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name= 'home'),
-    path('char.html', char, name= 'char'),
-    path('contacts.html', contacts, name= 'contacts'),
-    path('base.html', base, name='base'),
-    path('blog.html', blog, name='blog'),
-    path('detail.html', detail, name='detail'),
-    path('karakter.html', karakter, name="karakter"),
-    path('karakteradd.html', karakteradd, name="karakteradd"),
-    path('karakterupdate.html/<int:id>/', karakterupdate, name="karakterupdate"),
-    path('karakterdelete/<int:id>/', karakterdelete, name="karakterdelete"),
-   
+
+    # tampilan projectku
+    path('', home, name='home'),
+    path('char', char, name='char'),
+    path('contacts', contacts, name= 'contacts'),
+    path('base', base, name='base'),
+    path('blog', blog, name='blog'),
+    path('detail', detail, name='detail'),
+    path('karakter', karakter, name='karakter'),
+    path('map', map, name='map'),
+
+    # Dashboard App Character
+    path('dashboard/', include('Character.urls')),  
 ]
 
 #-------------------MEDIA-------------------
-urlpatterns += staticfiles_urlpatterns()
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  

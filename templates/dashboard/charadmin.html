@@ -1,4 +1,4 @@
-{% extends  'halaman/base.html' %}
+{% extends  'dashboard/baseadmin.html' %}
 {% load static %}
 
 {% block content %}
@@ -26,6 +26,17 @@
                         <div class="col-md-12 pb-30">
                             <div class="tf-soft flex items-center justify-between">
                                 <div class="soft-left">
+                                    <div class="column flex items-center" id="wallet-header">
+                                        <div class="column flex items-center">
+                                            <div class="widget-pagination">
+                                                <ul class="justify-center">
+                                                    <li>
+                                                        <a href="{% url 'charadd' %}">+</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -223,6 +234,20 @@
                                     </div>
                                 </div>
                                 <h5 class="name"><a href="nft-detail-2.html">{{ char.name|default:"-" }}</a></h5>
+                                <div class="column flex items-center" id="wallet-header">
+                                    <a href="{% url 'charudelete' char.id %}" id="connectbtn"
+                                       class="widget-pagination mr-2">
+                                        <button>
+                                            <span>Hapus</span>
+                                        </button>
+                                    </a>
+                                    <a href="{% url 'charupdate' char.id %}" id="connectbtn"
+                                       class="widget-pagination">
+                                        <button>
+                                            <span>Update</span>
+                                        </button>
+                                    </a>
+                                </div>
                                 <div class="divider"></div>
                                 <div class="meta-info flex items-center justify-between">
                                     <span class="text-bid">{{ char.role|default:"-" }}</span>
@@ -233,6 +258,8 @@
                         {% empty %}
                         <p>Tidak ada karakter yang tersedia.</p>
                     {% endfor %}
+                    
+                        
                         <div class="col-md-12 load-more">
                             <a id="button-loadmore" class="tf-button-loadmore">
                                 <span>Load More</span>

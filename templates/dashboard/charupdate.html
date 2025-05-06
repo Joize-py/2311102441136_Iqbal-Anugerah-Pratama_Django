@@ -1,0 +1,64 @@
+{%  extends 'dashboard/baseadmin.html' %}
+{% load static %}
+{% block content %}
+<div class="flat-title-page">
+    <div class="themesflat-container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="heading text-center">Tier List</h1>
+                <ul class="breadcrumbs flex justify-center">
+                    <li class="icon-keyboard_arrow_right">
+                        <a href="../halaman/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Explore</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tf-section-2 discover-item loadmore-12-item">
+    <div class="themesflat-container">
+        
+        <div class="product-item item-activity mb-0">
+            <h6><div class="column flex items-center">isi dulu</div></h6>
+            <i class="icon-keyboard_arrow_down"></i>
+           
+            <div class="content">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="table-heading">
+                        <div class="column">Name</div>
+                        <div class="column">Role</div>
+                        <div class="column">Image</div>
+                        <div class="column">Tier</div>
+                        <div class="column">Desc</div>
+                      
+                        
+                    </div>
+                    <div class="table-item">
+                        <div class="column flex items-center">{{ forms.name }}</div>
+                        <div class="column flex items-center">{{ forms.role }}</div>
+                        <div class="column flex items-center">{{ forms.image }}</div>
+                        
+                        <div class="column flex items-center">{{ forms.tier }}</div>
+                        <div class="column flex items-center">{{ forms.description }}</div>
+                        <div class="widget-pagination">
+                            <div class="" id="wallet-header">
+                                <a href="../dashboard/charadmin.html" id="connectbtn" class="widget-pagination">
+                                    <button>
+                                    <span>Tambah</span>
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
