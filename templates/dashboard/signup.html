@@ -1,0 +1,55 @@
+{%  extends 'halaman/base.html' %}
+{% load static %}
+{% block content %}
+
+            <div class="tf-section-2 pt-60 widget-box-icon">
+                <div class="themesflat-container w920">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section-1">
+                                <h2 class="tf-title pb-16">SignUp</h2>
+                                <p class="pb-40">Get started today by entering just a few details</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="widget-login">
+                                <form id="commentform" class="comment-form" method="POST">
+                                    {% csrf_token %}
+                                    <p class="pb-40">{{ pesan }}</p>
+                                    <fieldset class="username">
+                                        <label>Username *</label>
+                                        <input type="username" id="username" placeholder="Username Anda" name="username" tabindex="2" value="" aria-required="true" required>
+                                    </fieldset>
+                                    <fieldset class="username">
+                                        <label>Nama Depan *</label>
+                                        <input type="username" id="namadepan" placeholder="Nama Depan Anda" name="namadepan" tabindex="2" value="" aria-required="true" required>
+                                    </fieldset>
+                                       <fieldset class="username">
+                                        <label>Nama Belakang *</label>
+                                        <input type="username" id="namabelakang" placeholder="Nama Belakang Anda" name="namabelakang" tabindex="2" value="" aria-required="true" required>
+                                    </fieldset>
+                                    <fieldset class="email">
+                                        <label>Email *</label>
+                                        <input type="username" id="email" placeholder="mail@website.com" name="email" tabindex="2" value="" aria-required="true" required>
+                                    </fieldset>
+                                    <fieldset class="password">
+                                        <label>Password *</label>
+                                        <input class="password-input" type="password" id="password1" placeholder="Masukkan Password" name="password1" tabindex="2" value="" aria-required="true" required>
+                                        <i class="icon-show password-addon" id="password-addon"></i>
+                                    </fieldset>
+                                         <fieldset class="password">
+                                        <label>Password *</label>
+                                        <input class="password-input" type="password" id="password2" placeholder="Masukkan Ulang Password" name="password2" tabindex="2" value="" aria-required="true" required>
+                                        <i class="icon-show password-addon" id="password-addon"></i>
+                                    </fieldset>
+                                    <div class="btn-submit mb-30">
+                                        <button href="{% url 'karakteradd' %}" class="tf-button style-1 h50 w-100" type="submit">Sing Up<i class="icon-arrow-up-right2"></i></button>
+                                    </div>
+                                </form>    
+                                <div class="no-account">Ingin Masuk <a href="{% url 'login' %}" class="tf-color">Login</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

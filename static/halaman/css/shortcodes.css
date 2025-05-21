@@ -1527,7 +1527,8 @@
     color: rgba(255, 255, 255, 0.5);
 }
 .tf-blog-detail .inner-content .widget-reply .name,
-.tf-blog-detail .inner-content .widget-reply .email {
+.tf-blog-detail .inner-content .widget-reply .email,
+.tf-blog-detail .inner-content .widget-reply .username {
     width: 48.3%;
     margin-bottom: 22px;
 }

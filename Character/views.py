@@ -86,15 +86,6 @@ def baseadmin(request):
     return render(request, template_name, context)
 
 
-def login(request):
-    template_name = 'dashboard/login.html'
-    context = {
-        'tittle': 'Base Page',
-        'welcome': 'Welcome to Base Page',
-    }
-    return render(request, template_name, context)
-
-
 def charadmin(request):
     template_name = 'dashboard/charadmin.html'
     char = Hero.objects.all()
